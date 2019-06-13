@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+
+.col-sm-4 {
+width: 100%;
+}
+
+.col-sm-8 {
+width: 100%;
+}
+.container {
+	width: 100%;
+}
+}

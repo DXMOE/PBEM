@@ -1,0 +1,71 @@
+body {
+	margin: 0;
+}
+
+
+.container{
+	position: absolute;
+	background: black;
+	background-image: url('../css/img/logo.jpg');
+	background-repeat: no-repeat;
+  background-position: 50% 30%;
+	/*background: #222;*/
+	color: #fff;
+	width: 100%;
+	min-height: 100vh;
+    top: 0;
+	display: flex;
+}
+
+.preloader {
+	margin: 560px 10px 100px 425px;
+
+	width: 500px;
+	height: 30px;
+	background: rgba(255,255,255,0.1);
+
+	position: relative;
+}
+
+.preloader:before {
+	content: "";
+	position: absolute;
+	background: red;
+	width: 0;
+	height: 30px;
+
+	animation: preloader 3s infinite;
+
+}
+
+
+.preloader p {
+	margin: 0;
+	line-height: 30px;
+	font-size: 25px;
+	font-weight: bold;
+
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+.cerrar {
+	transform: translateY(-100%);
+	transition: all 0.5s;
+}
+
+
+@keyframes preloader {
+    	
+    90% {
+    	width: 100%;
+    	opacity: 1;
+    }
+
+	100% {
+		width: 100%;
+	}
+}

@@ -1,0 +1,19 @@
+* {
+  margin:0px;
+  padding:0px;
+}
+body {
+  width:100vw;
+  height:100vh;
+  background-image: linear-gradient(rgba(100,100,100,0.99),rgba(0,0,0,0.95)),
+  url('../css/css/img/marvel.png');
+}
+#torch {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  
+  clip:rect(0px,100px,100px,0px);
+}
