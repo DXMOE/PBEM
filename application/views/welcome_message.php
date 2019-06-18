@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 
-	<title>Biblioteca</title>
+	<title>Centro de Computo</title>
 
 	<style type="text/css">
 
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <center>
 <img src="css/css/img/1.jpg" alt="">
 <div style="padding:12px;line-height:1.4;">
- <h1>Biblioteca</h1>
+ <h1>Centro de Computo</h1>
 <h2>Horario</h2>
 <h2>Lunes a Viernes: 7:00 hrs a 20:00 hrs</h2>
 <h2>Sabado: 8:00 hrs a 16:00 hrs</h2>

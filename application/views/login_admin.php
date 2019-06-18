@@ -80,7 +80,8 @@
 					<?=form_open(base_url().'login/new_user')?>
 					<label for="usuario">Nombre De Usuario</label>
 					<?=form_input($usuario)?><p><?=form_error('usuario')?></p>
-					
+					<label for="contraseña">Contraseña</label>
+					<?=form_password($contraseña)?><p><?=form_error('contraseña')?></p>
 					<?=form_hidden('token',$token)?>
 					<br>
 					<center><?=form_submit($submit)?></center>

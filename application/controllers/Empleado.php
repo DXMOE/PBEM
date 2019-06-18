@@ -27,28 +27,31 @@ class  Empleado extends CI_Controller{
     try{
       $crud = new grocery_CRUD();
 
-      $crud->where('nu_rol', '3');
-
       $crud->set_theme('flexigrid');
-      $crud->set_table('eg_users');
-      $crud->unset_fields('nu_rol');
-      $crud->set_subject('Cliente');
+      $crud->set_table('registros');
+      $crud->unset_fields('hora');
+      $crud->set_subject('Registros');
       $crud->set_language("spanish");
-      $crud->set_relation('nu_rol','eg_roles','nombre');
-      $crud->display_as('nu_rol','Tipo de usuario');
-      $crud->change_field_type('contraseña','password');
-      $crud->callback_before_insert(array($this,'encrypt_password'));
-      $crud->callback_before_update(array($this,'encrypt_password'));
+      $crud->set_relation('alumno_id','alumnos','{nombre} {ap_paterno} {ap_materno}');
+      $crud->set_relation('servicios_id','servicios','nombre');
+      $crud->set_relation('materia_id','materias','nombre');
+      $crud->set_relation('semestre_id','semestres','nombre');
 
+      $crud->display_as('alumno_id','Alumno');
+       $crud->display_as('materia_id','Materia');
+       $crud->display_as('servicios_id','Servicios');
+       $crud->display_as('semestre_id','Semestre');
+     
 
+      $crud->required_fields('matricula');
+      $crud->required_fields('alumno_id');
+      $crud->required_fields('fecha');
 
-      $crud->required_fields('nombre');
-      $crud->required_fields('paterno');
-      $crud->required_fields('materno');
-      $crud->required_fields('usario');
-      $crud->required_fields('rol');
-
-      $crud->set_field_upload('imagen','assets/uploads/images_usuarios');
+      $crud->unset_delete();
+      $crud->unset_edit();
+     
+      $crud->required_fields('materia_id');
+    $crud->field_type('hora','invisible');
 
       $output = $crud->render();
 

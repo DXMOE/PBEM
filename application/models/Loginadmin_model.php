@@ -2,16 +2,16 @@
 /**
  *
  */
-class Login_model extends CI_Model {
+class Loginadmin_model extends CI_Model {
 
 	public function __construct() {
 		parent::__construct();
 	}
 
-	public function login_user($usuario)
+	public function login_user($usuario,$contraseña)
 	{
 		$this->db->where('usuario',$usuario);
-		//$this->db->where('contraseña',$contraseña);
+		$this->db->where('contraseña',$contraseña);
 		$query = $this->db->get('eg_users');
 		if($query->num_rows() == 1)
 		{

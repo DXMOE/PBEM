@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller
+class Login_admin extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
- $this->load->model('login_model');
+ $this->load->model('loginadmin_model');
  $this->load->library(array('session','form_validation'));
  $this->load->helper(array('url','form'));
  $this->load->database('default');
@@ -18,7 +18,7 @@ class Login extends CI_Controller
  case '':
  $data['token'] = $this->token();
  $data['titulo'] = 'Login con roles de usuario en codeigniter';
- $this->load->view('login_view',$data);
+ $this->load->view('login_admin',$data);
  break;
  case '1':
  redirect(base_url().'administrador');
@@ -41,7 +41,7 @@ public function new_user()
  if($this->input->post('token') && $this->input->post('token') == $this->session->userdata('token'))
  {
             $this->form_validation->set_rules('usuario', 'nombre de usuario', 'required|trim|min_length[2]|max_length[150]|xss_clean');
-          //  $this->form_validation->set_rules('contraseña', 'contraseña', 'required|trim|min_length[0]|max_length[150]|xss_clean');
+            $this->form_validation->set_rules('contraseña', 'contraseña', 'required|trim|min_length[0]|max_length[150]|xss_clean');
 
             //lanzamos mensajes de error si es que los hay
 
